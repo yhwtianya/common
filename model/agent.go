@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+// Agent上报Hbs数据结构
 type AgentReportRequest struct {
 	Hostname      string
 	IP            string
@@ -39,6 +40,7 @@ func (this *AgentHeartbeatRequest) String() string {
 	)
 }
 
+// 查询Hbs Plugins数据结构
 type AgentPluginsResponse struct {
 	Plugins   []string
 	Timestamp int64
@@ -52,6 +54,7 @@ func (this *AgentPluginsResponse) String() string {
 	)
 }
 
+// 内置Metric结构
 // e.g. net.port.listen or proc.num
 type BuiltinMetric struct {
 	Metric string
