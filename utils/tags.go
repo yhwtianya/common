@@ -6,6 +6,7 @@ import (
 	"strings"
 )
 
+// 对tags进行key排序，方便进行比较
 func SortedTags(tags map[string]string) string {
 	if tags == nil {
 		return ""

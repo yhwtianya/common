@@ -2,9 +2,11 @@ package model
 
 import (
 	"fmt"
+
 	MUtils "github.com/open-falcon/common/utils"
 )
 
+// Metric值数据结构，rrd数据结构
 type MetricValue struct {
 	Endpoint  string      `json:"endpoint"`
 	Metric    string      `json:"metric"`
@@ -28,6 +30,7 @@ func (this *MetricValue) String() string {
 	)
 }
 
+// Metric值数据结构，rrd数据结构
 // Same As `MetricValue`
 type JsonMetaData struct {
 	Metric      string      `json:"metric"`
@@ -44,6 +47,7 @@ func (t *JsonMetaData) String() string {
 		t.Endpoint, t.Metric, t.Tags, t.CounterType, t.Step, t.Value, t.Timestamp)
 }
 
+// Metric值数据结构，rrd数据结构
 type MetaData struct {
 	Metric      string            `json:"metric"`
 	Endpoint    string            `json:"endpoint"`
@@ -59,6 +63,7 @@ func (t *MetaData) String() string {
 		t.Endpoint, t.Metric, t.Timestamp, t.Step, t.Value, t.Tags)
 }
 
+// 返回Metric的Key
 func (t *MetaData) PK() string {
 	return MUtils.PK(t.Endpoint, t.Metric, t.Tags)
 }
