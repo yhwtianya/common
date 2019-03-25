@@ -2,6 +2,7 @@ package model
 
 import (
 	"fmt"
+
 	"github.com/open-falcon/common/utils"
 )
 
@@ -13,7 +14,7 @@ type Strategy struct {
 	Operator   string            `json:"operator"`   // e.g. < !=
 	RightValue float64           `json:"rightValue"` // critical value
 	MaxStep    int               `json:"maxStep"`
-	Priority   int               `json:"priority"`
+	Priority   int               `json:"priority"` // 告警级别
 	Note       string            `json:"note"`
 	Tpl        *Template         `json:"tpl"`
 }

@@ -26,6 +26,7 @@ func (this *JudgeItem) String() string {
 		this.Tags)
 }
 
+// Endpoint、Metric、Tags的md5
 func (this *JudgeItem) PrimaryKey() string {
 	return utils.Md5(utils.PK(this.Endpoint, this.Metric, this.Tags))
 }
