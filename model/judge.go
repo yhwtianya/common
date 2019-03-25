@@ -2,9 +2,11 @@ package model
 
 import (
 	"fmt"
+
 	"github.com/open-falcon/common/utils"
 )
 
+// Transfer发送给Judge的数据结构
 type JudgeItem struct {
 	Endpoint  string            `json:"endpoint"`
 	Metric    string            `json:"metric"`

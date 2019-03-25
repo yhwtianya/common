@@ -2,10 +2,12 @@ package model
 
 import (
 	"fmt"
-	MUtils "github.com/open-falcon/common/utils"
 	"math"
+
+	MUtils "github.com/open-falcon/common/utils"
 )
 
+// Transfer发送给Graph的数据结构
 // DsType 即RRD中的Datasource的类型：GAUGE|COUNTER|DERIVE
 type GraphItem struct {
 	Endpoint  string            `json:"endpoint"`

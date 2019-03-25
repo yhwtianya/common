@@ -5,6 +5,7 @@ import (
 	"strings"
 )
 
+// Transfer发送给Tsdb的数据结构
 type TsdbItem struct {
 	Metric    string            `json:"metric"`
 	Tags      map[string]string `json:"tags"`

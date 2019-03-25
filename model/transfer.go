@@ -4,11 +4,12 @@ import (
 	"fmt"
 )
 
+// 接收上报数据后的响应结构
 type TransferResponse struct {
 	Message string
 	Total   int
-	Invalid int
-	Latency int64
+	Invalid int   //无效计数
+	Latency int64 //耗时
 }
 
 func (this *TransferResponse) String() string {
