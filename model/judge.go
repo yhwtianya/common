@@ -12,7 +12,7 @@ type JudgeItem struct {
 	Metric    string            `json:"metric"`
 	Value     float64           `json:"value"`
 	Timestamp int64             `json:"timestamp"`
-	JudgeType string            `json:"judgeType"`
+	JudgeType string            `json:"judgeType"` //GAUGE或COUNTER或DERIVE
 	Tags      map[string]string `json:"tags"`
 }
 
@@ -30,6 +30,7 @@ func (this *JudgeItem) PrimaryKey() string {
 	return utils.Md5(utils.PK(this.Endpoint, this.Metric, this.Tags))
 }
 
+// judge保存历史数据的结构
 type HistoryData struct {
 	Timestamp int64   `json:"timestamp"`
 	Value     float64 `json:"value"`
