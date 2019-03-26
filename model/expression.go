@@ -2,13 +2,15 @@ package model
 
 import (
 	"fmt"
+
 	"github.com/open-falcon/common/utils"
 )
 
+// Expression是基于Metric的
 type Expression struct {
 	Id         int               `json:"id"`
-	Metric     string            `json:"metric"`
-	Tags       map[string]string `json:"tags"`
+	Metric     string            `json:"metric"`     //endpoint放到了tag中保存
+	Tags       map[string]string `json:"tags"`       //保存了tags,endpoint也作为tag进行保存
 	Func       string            `json:"func"`       // e.g. max(#3) all(#3)
 	Operator   string            `json:"operator"`   // e.g. < !=
 	RightValue float64           `json:"rightValue"` // critical value
@@ -34,6 +36,7 @@ func (this *Expression) String() string {
 	)
 }
 
+// Hbs响应Judge同步Expression的数据结构
 type ExpressionResponse struct {
 	Expressions []*Expression `json:"expressions"`
 }

@@ -35,11 +35,13 @@ func (this *Strategy) String() string {
 	)
 }
 
+// Strategy是基于主机的
 type HostStrategy struct {
 	Hostname   string     `json:"hostname"`
 	Strategies []Strategy `json:"strategies"`
 }
 
+// Hbs响应Judge同步Strategies的数据结构
 type StrategiesResponse struct {
 	HostStrategies []*HostStrategy `json:"hostStrategies"`
 }
