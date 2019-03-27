@@ -39,6 +39,7 @@ func (this *GraphItem) String() string {
 	)
 }
 
+// GraphItem的Endpoint、Metric、Tags构成Key
 func (this *GraphItem) PrimaryKey() string {
 	return MUtils.PK(this.Endpoint, this.Metric, this.Tags)
 }
@@ -93,6 +94,7 @@ func (v JsonFloat) MarshalJSON() ([]byte, error) {
 	}
 }
 
+// rrd值结构
 type RRDData struct {
 	Timestamp int64     `json:"timestamp"`
 	Value     JsonFloat `json:"value"`

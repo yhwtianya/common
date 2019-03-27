@@ -5,6 +5,7 @@ import (
 )
 
 // TODO 以下的部分, 考虑放到公共组件库
+// 返回排序后的key
 func KeysOfMap(m map[string]string) []string {
 	keys := make(sort.StringSlice, len(m))
 	i := 0
