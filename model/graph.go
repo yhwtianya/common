@@ -44,14 +44,17 @@ func (this *GraphItem) PrimaryKey() string {
 	return MUtils.PK(this.Endpoint, this.Metric, this.Tags)
 }
 
+// GraphItem的Endpoint、Metric、Tags构成md5sum
 func (t *GraphItem) Checksum() string {
 	return MUtils.Checksum(t.Endpoint, t.Metric, t.Tags)
 }
 
+// GraphItem的Endpoint、Metric、Tags、DsType、Step构成UUID
 func (this *GraphItem) UUID() string {
 	return MUtils.UUID(this.Endpoint, this.Metric, this.Tags, this.DsType, this.Step)
 }
 
+// Rpc GraphQuery的入参
 // ConsolFun 是RRD中的概念，比如：MIN|MAX|AVERAGE
 type GraphQueryParam struct {
 	Start     int64  `json:"start"`
@@ -61,6 +64,7 @@ type GraphQueryParam struct {
 	Counter   string `json:"counter"`
 }
 
+// Rpc GraphQuery的出参
 type GraphQueryResponse struct {
 	Endpoint string     `json:"endpoint"`
 	Counter  string     `json:"counter"`
