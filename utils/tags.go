@@ -41,6 +41,7 @@ func SortedTags(tags map[string]string) string {
 	return strings.Join(ret, ",")
 }
 
+// 解析tag字符串到map
 func DictedTagstring(s string) map[string]string {
 	if s == "" {
 		return map[string]string{}

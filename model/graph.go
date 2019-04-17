@@ -117,17 +117,20 @@ func (this *RRDData) String() string {
 	)
 }
 
+// 请求参数，用于查询指标对应的rrrd属性
 type GraphInfoParam struct {
 	Endpoint string `json:"endpoint"`
 	Counter  string `json:"counter"`
 }
 
+// 响应参数，代表指标对应的rrd属性
 type GraphInfoResp struct {
 	ConsolFun string `json:"consolFun"`
 	Step      int    `json:"step"`
 	Filename  string `json:"filename"`
 }
 
+// 响应参数，代表指标及其rrd属性
 type GraphFullyInfo struct {
 	Endpoint  string `json:"endpoint"`
 	Counter   string `json:"counter"`
