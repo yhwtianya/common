@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+// 保存主机id和hostname
 type Host struct {
 	Id   int
 	Name string

@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+// 保存template数据结构
 type Template struct {
 	Id       int    `json:"id"`
 	Name     string `json:"name"`

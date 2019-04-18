@@ -27,6 +27,7 @@ type AgentUpdateInfo struct {
 	ReportRequest *AgentReportRequest
 }
 
+// Agent向Hbs发送心跳数据结构
 type AgentHeartbeatRequest struct {
 	Hostname string
 	Checksum string
